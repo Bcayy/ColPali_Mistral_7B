@@ -154,7 +154,7 @@ def draw_highlight(image, box, color=(255, 0, 0, 80), width=2):
 ---
 
 ![Zaman](Zaman.png)
-![LLM Suresi](LLM%20Suresi.png)
+![LLM Suresi](LLM_Suresi.png)
 
 ## Proje Notları
 
