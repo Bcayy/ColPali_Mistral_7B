@@ -204,19 +204,6 @@ def draw_highlight(image, box, color=(255, 0, 0, 80), width=2):
 
 ---
 
-## Nasıl Geliştirilebilir?
-
-### Teknik Geliştirme
-
-* Embed cache'leri daha etkili saklama
-
-### UX Odaklı Geliştirme
-
-* Highlight alanına tıklanılabilirlik (interactive canvas)
-* Cevaplanan soruyu PDF içinde gezebilme (PDF viewer)
-
----
-
 ## Karşılaşılan Zorluklar ve Çözüm Yolları
 
 ### 1.  LLM Çıktısında Prompt’un Tekrar Dönmesi
