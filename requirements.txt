@@ -1,0 +1,14 @@
+fast-plaid
+fastkmeans
+pdf2image
+colpali-engine
+pytesseract
+gradio==5.37.0
+transformers
+accelerate
+bitsandbytes
+langchain
+langchain-community
+langchain-core
+huggingface_hub
+langchain-huggingface
