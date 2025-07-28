@@ -69,6 +69,18 @@ for batch in dataloader:
 
 * Sorguya en yakın sayfalar `cosine similarity` ile bulunur. `Plaid index` ile en iyi 3 sayfa seçilir ve bu sayfalardaki metinler LLM'e verilir.
 
+#### Cosine similarity
+ColPali’de Kullanımı
+* Kullanıcının sorusu embed edilir.
+* Tüm sayfa embedding’leri ile karşılaştırılır.
+* En yüksek cosine skoruna sahip sayfalar, en anlamlı sayfalardır.
+
+#### Plaid index
+ColPali’de Kullanımı:
+* Tüm sayfa embedding’leri Plaid Index’e yüklenir
+* Sorgu vektörüyle en benzer top-k sayfa hızlıca bulunur
+* Bu sayfalar LLM’e verilecek içerik olarak seçilir
+
 ![Skor](Skor.png)
 
 ### 6. LLM ile RAG (Retrieval-Augmented Generation)
