@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ## 🧪 Çalıştırma
 
-veya Google Colab üzerinden çalıştırabilirsiniz.
+Google Colab üzerinden çalıştırabilirsiniz.
 
 ## ✍️ Geliştiren
 
