@@ -9,7 +9,7 @@ ColPali, kullanıcıların PDF veya görsel dosyalar yükleyerek bu belgelerden 
 * Belgelerin içeriğinden anlamlı bilgi çıkarmak
 * Kullanıcı sorgularına **LLM tabanlı, doğru ve kısa yanıtlar** üretmek
 * **RAG (Retrieval-Augmented Generation)** ile kontekste dayalı sorgu yanıtlamak
-* **Cevap highlight’lama**, **sayfa filtresi**, **soru önerisi** gibi özellikleri desteklemek
+* **Cevap highlight’lama**, **sayfa filtresi** gibi özellikleri desteklemek
 
 ---
 
@@ -32,7 +32,6 @@ ColPali, kullanıcıların PDF veya görsel dosyalar yükleyerek bu belgelerden 
 3. Langchain ile benzer sayfalar skora göre sıralanır
 4. `Mistral` LLM ile RAG mimarisi içinde cevap üretilir
 5. ️ Cevabın alındığı görsel bölge highlight edilir
-6. Ek olarak ilgili soru önerileri sunulur
 
 ---
 
