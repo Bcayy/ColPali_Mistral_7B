@@ -35,21 +35,21 @@ ColPali, kullanıcıların PDF veya görsel dosyalar yükleyerek bu belgelerden 
 
 ---
 
-## 🔍 ColPali Nasıl Çalışır? – Detaylı Açıklama
+## 🔍 ColPali Nasıl Çalışır?
 
-### 1. 📄 Girdi Yükleme
+### 1. Girdi Yükleme
 
 Kullanıcı sistem arayüzü üzerinden PDF veya resim dosyasını yükler.
 
-### 2. 📜 OCR (Optical Character Recognition)
+### 2. OCR (Optical Character Recognition)
 
 Dosya sayfaları görüntülere çevrilir ve `pytesseract` kullanılarak görsellerdeki metinler tanınır. Bu adımda her kelimenin pozisyon bilgisi (bounding box) da alınır, böylece görselde highlight yapılabilir.
 
-### 3. 🔢 Embedding Hesaplama
+### 3. Embedding Hesaplama
 
 Her sayfanın OCR metni `ColPali Engine` ile **anlamsal vektörlere** dönüştürülür. Bu embedding’ler cache’e alınır, böylece aynı dosya tekrar yüklenirse süre kısalır.
 
-### 4. ❓ Sorgu Girişi ve Sorgu Embed’i
+### 4. Sorgu Girişi ve Sorgu Embed’i
 
 Kullanıcının girdiyi doğal dildeki soru, encoder ile vektörleştirilir. Bu embedding, sayfa vektörleriyle karşılaştırılır.
 
@@ -65,13 +65,13 @@ for batch in dataloader:
     embeds = model(**batch)
 ```
 
-### 5. 📊 Skor Hesaplama ve En İyi Sayfaların Seçimi
+### 5. Skor Hesaplama ve En İyi Sayfaların Seçimi
 
 * Sorguya en yakın sayfalar `cosine similarity` ile bulunur. `Plaid index` ile en iyi 3 sayfa seçilir ve bu sayfalardaki metinler LLM'e verilir.
 
 ![Skor](Skor.png)
 
-### 6. 🧐 LLM ile RAG (Retrieval-Augmented Generation)
+### 6. LLM ile RAG (Retrieval-Augmented Generation)
 
 Seçilen sayfa metinleri, prompt yapısı ile birlikte **LLM** modeline verilir. Model, bu kontekste dayalı öz ve anlamlı bir cevap üretir.
 * LangChain zinciri şöyle kurulu: PromptTemplate → HF Pipeline → Parser.
@@ -84,7 +84,7 @@ prompt_template = PromptTemplate.from_template(template)
 qa_chain = prompt_template | llm_langchain | CleanHFParser()
 ```
 
-### 7. ✏️ Highlight Etme
+### 7. Highlight Etme
 
 Modelin cevabından anahtar ifade çıkarılır ve OCR kutularıyla karşılaştırılır. En benzer kutu belirlenir ve ilgili bölge görselde renklendirilir.
 * Cevaptan gelen kısa metin OCR bloklarıyla SequenceMatcher kullanılarak eşleştiriliyor.
@@ -108,7 +108,7 @@ def draw_highlight(image, box, color=(255, 0, 0, 80), width=2):
 
 ![Highlight](Highlight.png)
 
-### 8. 📍 Sonuçların Görselleştirilmesi
+### 8. Sonuçların Görselleştirilmesi
 
 * LLM yanıtı
 * Cevabın geldiği sayfanın highlight'ı
